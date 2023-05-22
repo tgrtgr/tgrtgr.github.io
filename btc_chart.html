@@ -3,121 +3,103 @@
 
 <head>
 
-<title>TGR</title>
-
+<title>BTC Charts - TGR</title>
+  <style>
+    #price_binance {
+      color: white;
+      font-size: 36px;
+	  }
+    #price {
+      color: white;
+      font-size: 36px;
+	  }
+  </style>
 </head>
 
 <body bgcolor="#003200" lang=EN-US>
 <center>
 
 
+<br><br><br>
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Bitcoin Price</title>
+</head>
+<body>
+-->
 
-<!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div id="tradingview_d214a"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BTCUSDT/?exchange=BINANCE" rel="noopener" target="_blank"><span class="blue-text">BTCUSDT chart</span></a> by TradingView</div>
-  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-  <script type="text/javascript">
-  new TradingView.widget(
-  {
-  "width": 700,
-  "height": 350,
-  "symbol": "BINANCE:BTCUSDT",
-  "interval": "15",
-  "timezone": "Etc/UTC",
-  "theme": "dark",
-  "style": "1",
-  "locale": "en",
-  "toolbar_bg": "#f1f3f6",
-  "enable_publishing": false,
-  "allow_symbol_change": true,
-  "container_id": "tradingview_d214a"
-}
-  );
+  <p id="price_binance"></p>
+
+  <script>
+    function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+
+    function updatePrice() {
+      // Fetch the Bitcoin price from Binance API
+      fetch('https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT')
+        .then(response => response.json())
+        .then(data => {
+          // Update the price on the page with yellow color and comma separator
+          const priceElement = document.getElementById('price_binance');
+          priceElement.textContent = 'Binance BTC Price: $' + numberWithCommas(parseFloat(data.price).toFixed(2));
+        })
+        .catch(error => {
+          console.log('Error:', error);
+        });
+    }
+
+    // Update the price initially
+    updatePrice();
+
+    // Update the price every second
+    setInterval(updatePrice, 1000);
   </script>
-</div>
-<!-- TradingView Widget END -->
 
 
-<!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div id="tradingview_ce8f1"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BTCUSDT/?exchange=BINANCE" rel="noopener" target="_blank"><span class="blue-text">BTCUSDT chart</span></a> by TradingView</div>
-  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-  <script type="text/javascript">
-  new TradingView.widget(
-  {
-  "width": 700,
-  "height": 300,
-  "symbol": "BINANCE:BTCUSDT",
-  "interval": "60",
-  "timezone": "Etc/UTC",
-  "theme": "dark",
-  "style": "1",
-  "locale": "en",
-  "toolbar_bg": "#f1f3f6",
-  "enable_publishing": false,
-  "allow_symbol_change": true,
-  "container_id": "tradingview_ce8f1"
-}
-  );
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Bitcoin Price</title>
+</head>
+<body>
+-->
+
+  <p id="price"></p>
+
+  <script>
+    function updatePrice() {
+      // Fetch the Bitcoin price from Upbit API
+      fetch('https://api.upbit.com/v1/ticker?markets=KRW-BTC')
+        .then(response => response.json())
+        .then(data => {
+          // Update the price on the page
+          document.getElementById('price').textContent = 'Upbit BTC Price: ₩' + parseFloat(data[0].trade_price).toLocaleString();
+        })
+        .catch(error => {
+          console.log('Error:', error);
+        });
+    }
+
+    // Update the price initially
+    updatePrice();
+
+    // Update the price every second
+    setInterval(updatePrice, 1000);
   </script>
-</div>
-<!-- TradingView Widget END -->
 
 
-<!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div id="tradingview_ecc0a"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BTCUSDT/?exchange=BINANCE" rel="noopener" target="_blank"><span class="blue-text">BTCUSDT chart</span></a> by TradingView</div>
-  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-  <script type="text/javascript">
-  new TradingView.widget(
-  {
-  "width": 700,
-  "height": 300,
-  "symbol": "BINANCE:BTCUSDT",
-  "interval": "240",
-  "timezone": "Etc/UTC",
-  "theme": "dark",
-  "style": "1",
-  "locale": "en",
-  "toolbar_bg": "#f1f3f6",
-  "enable_publishing": false,
-  "allow_symbol_change": true,
-  "container_id": "tradingview_ecc0a"
-}
-  );
-  </script>
-</div>
-<!-- TradingView Widget END -->
+<br><br>
 
 
-<!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div id="tradingview_93b84"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BTCUSDT/?exchange=BINANCE" rel="noopener" target="_blank"><span class="blue-text">BTCUSDT chart</span></a> by TradingView</div>
-  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-  <script type="text/javascript">
-  new TradingView.widget(
-  {
-  "width": 700,
-  "height": 300,
-  "symbol": "BINANCE:BTCUSDT",
-  "interval": "D",
-  "timezone": "Etc/UTC",
-  "theme": "dark",
-  "style": "1",
-  "locale": "en",
-  "toolbar_bg": "#f1f3f6",
-  "enable_publishing": false,
-  "allow_symbol_change": true,
-  "container_id": "tradingview_93b84"
-}
-  );
-  </script>
-</div>
-<!-- TradingView Widget END -->
+<span style='font-size:28.0pt;
+  font-family:"Georgia",serif;color:white'>BTC/USDT Binance Chart</span>
+
+<br><br>
 
 
 <!-- TradingView Widget BEGIN -->
@@ -128,10 +110,10 @@
   <script type="text/javascript">
   new TradingView.widget(
   {
-  "width": 700,
-  "height": 300,
+  <!-- "width": 700, -->
+  "height": 390,
   "symbol": "BINANCE:BTCUSDT",
-  "interval": "W",
+  "interval": "D",
   "timezone": "Etc/UTC",
   "theme": "dark",
   "style": "1",
@@ -146,19 +128,25 @@
 </div>
 <!-- TradingView Widget END -->
 
+<br><br><br>
+
+<span style='font-size:28.0pt;
+  font-family:"Georgia",serif;color:white'>BTC/KRW UPbit Chart</span>
+
+<br><br>
 
 <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
-  <div id="tradingview_613bd"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BTCUSDT/?exchange=BINANCE" rel="noopener" target="_blank"><span class="blue-text">BTCUSDT chart</span></a> by TradingView</div>
+  <div id="tradingview_08315"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
   <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
   <script type="text/javascript">
   new TradingView.widget(
   {
-  "width": 700,
-  "height": 300,
-  "symbol": "BINANCE:BTCUSDT",
-  "interval": "M",
+  <!-- "width": 700, -->
+  "height": 390,
+  "symbol": "UPBIT:BTCKRW",
+  "interval": "D",
   "timezone": "Etc/UTC",
   "theme": "dark",
   "style": "1",
@@ -166,7 +154,42 @@
   "toolbar_bg": "#f1f3f6",
   "enable_publishing": false,
   "allow_symbol_change": true,
-  "container_id": "tradingview_613bd"
+  "container_id": "tradingview_08315"
+}
+  );
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+<br><br><br>
+
+
+<span style='font-size:28.0pt;
+  font-family:"Georgia",serif;color:white'>BTC/USD Bitstamp Chart</span>
+
+<br><br>
+
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div id="tradingview_8d440"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <script type="text/javascript">
+  new TradingView.widget(
+  {
+  <!--   "width": 700, -->
+  "height": 390,
+  "symbol": "BITSTAMP:BTCUSD",
+  "interval": "M",
+  "timezone": "Etc/UTC",
+  "theme": "dark",
+  "style": "1",
+  "locale": "en",
+  "toolbar_bg": "#f1f3f6",
+  "enable_publishing": false,
+  "range": "ALL",
+  "allow_symbol_change": true,
+  "container_id": "tradingview_8d440"
 }
   );
   </script>
